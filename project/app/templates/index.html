@@ -7,7 +7,7 @@
 		  content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 	<title>Puls3: Comunidad online de gente pro y (no sé que más escribir)</title>
-	<link rel="stylesheet" href="normalize.css" />
+	<link rel="stylesheet" href="/static/normalize.css" />
 	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
 	<link rel="stylesheet" href="/static/estilos.css" />
 	<link rel="stylesheet" href="/static/responsive.css" />
@@ -16,11 +16,11 @@
 	<!-- comentario de lo que sea -->
 	<header>
 		<figure id="logo">
-			<img src="logo.png" />
+			<!-- <img src="logo.png" /> -->
 		</figure>
 		<h1 id="titulo_header">Puls3: Comunidad de gente cool, atractiva y millonaria</h1>
 		<figure id="avatar">
-			<img src="avatar.jpg" />
+			<!-- <img src="avatar.jpg" /> -->
 			<figcaption></figcaption>
 		</figure>
 	</header>
@@ -39,6 +39,8 @@
 		<p>Es importante registrarte porque LOL!</p>
 		<a id="registro" href="#">Registrate acá</a>
 		<p id="mensaje_registro">En serio, registrate por favor</p>
+		{% else %}
+			<h2>Hola {{request.user}}</h2>
 		{% endif %}
 	</aside>
 	<section id="contenido">
@@ -47,7 +49,7 @@
 	    {% for enlace in enlaces %}
 		<article class="item">
 			<figure class="imagen_item">
-				<img src="imagen.jpg" />
+				<!-- <img src="imagen.jpg" /> -->
 			</figure>
 			<h2 class="titulo_item">
 				<a href="{{enlace.enlace}}">{{enlace.titulo}}</a>
